@@ -3,8 +3,6 @@ import "flatpickr/dist/flatpickr.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-
-const datatimePicker = document.querySelector("input#datetime-picker");
 const startButton = document.querySelector("[data-start]");
 const daysElement = document.querySelector("[data-days]");
 const hoursElement = document.querySelector("[data-hours]");

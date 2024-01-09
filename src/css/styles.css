@@ -69,7 +69,6 @@ button[type="button"] {
 .label {
   font-size: 16px;
   font-weight: 600;
-  font-family: 'Times New Roman',  sans-serif;
   text-transform: uppercase;
   text-align: center;
 } 
@@ -87,6 +86,7 @@ input[type="number"] {
   min-width: 240px;
   height: 40px;
   cursor: pointer;
+  outline: none;
   padding: 2px 4px;
   border-radius: 2px;
   border: 1px solid #242424;
@@ -95,7 +95,7 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-  border: 1px solid blue;
+  border: 2px solid #4169E1;
 }
 
 fieldset {
