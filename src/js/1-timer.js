@@ -18,9 +18,8 @@ const options = {
     minuteIncrement: 1,
 
     onClose(selectedDates) {
-      console.log("Date selected:", selectedDates[0]);
       userSelectedDate = selectedDates[0];
-
+      
       validateSelectedDate();
     },
   };
@@ -58,6 +57,11 @@ startButton.disabled = true;
         } else {
             const { days, hours, minutes, seconds } = convertMs(timeDifference);
             updateTimerDisplay(days, hours, minutes, seconds);
+
+            if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+              clearInterval(countdownInterwal);
+              startButton.disabled = true; 
+          }
         }
     }, 1000);
   }
