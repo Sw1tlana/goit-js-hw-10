@@ -46,22 +46,16 @@ startButton.disabled = true;
   }
 
   function startTimer () {
-    const countdownInterwal = setInterval(() => {
+   const countdownInterwal = setInterval(() => {
         const now = new Date();
         const timeDifference = userSelectedDate - now;
 
-        if(timeDifference <= 0) {
+        if(timeDifference <= 1000) {
             clearInterval(countdownInterwal);
             updateTimerDisplay(0, 0, 0, 0);
-
         } else {
             const { days, hours, minutes, seconds } = convertMs(timeDifference);
             updateTimerDisplay(days, hours, minutes, seconds);
-
-            if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
-              clearInterval(countdownInterwal);
-              startButton.disabled = true; 
-          }
         }
     }, 1000);
   }

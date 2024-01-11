@@ -9,33 +9,33 @@ const promise = new Promise((resolve, reject) => {
 const isSubmitSuccessful = form.elements.state.value === "fulfilled";
 
 setTimeout(() => {
- if(isSubmitSuccessful) {
-    resolve(iziToast.show({
-        backgroundColor: '#108C10',
-        close: false,
-        message: `✅ Fulfilled promise in ${delay}ms`,
-        messageColor: '#ffffff',
-        position: 'topRight'
-    }));
- } else {
-    reject(iziToast.show({
-        backgroundColor: '#D82C20',
-        close: false,
-        message: `❌ Rejected promise in ${delay}ms`,
-        messageColor: '#ffffff',
-        position: 'topRight'
-    }));
- }
-}, delay);
+        if(isSubmitSuccessful) {
+            resolve(`✅ Fulfilled promise in ${delay}ms`);
+        } else {
+            reject(`❌ Rejected promise in ${delay}ms`);
+        }
+    }, delay);
 });
 
 promise.then(
         value => {
-        console.log(`Fulfilled promise in ${delay}ms`);
+            iziToast.show({
+                backgroundColor: '#108C10',
+                close: false,
+                message: `✅ Fulfilled promise in ${delay}ms`,
+                messageColor: '#ffffff',
+                position: 'topRight'
     })
+})
     .catch(
         error => {
-        console.log(`Rejected promise in ${delay}ms`);
+            iziToast.show({
+                backgroundColor: '#D82C20',
+                close: false,
+                message: `❌ Rejected promise in ${delay}ms`,
+                messageColor: '#ffffff',
+                position: 'topRight'
+            })
     })
 }
 
