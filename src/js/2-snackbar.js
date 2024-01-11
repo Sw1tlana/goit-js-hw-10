@@ -10,9 +10,9 @@ const isSubmitSuccessful = form.elements.state.value === "fulfilled";
 
 setTimeout(() => {
         if(isSubmitSuccessful) {
-            resolve(`✅ Fulfilled promise in ${delay}ms`);
+            resolve(delay);
         } else {
-            reject(`❌ Rejected promise in ${delay}ms`);
+            reject(delay);
         }
     }, delay);
 });
